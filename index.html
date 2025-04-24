@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slide active" id="slide1">
+        <h1 class="typing-text">Bem-vinda de volta neném, enquanto você estava trabalhando eu fiquei contando os dias pra te ver!</h1>
+        <div class="arrow">→</div> <!-- Certifique-se que esta seta existe -->
+    </div>
+
+    <div class="slide" id="slide2">
+        <div class="image-container">
+            <h1 class="typing-text">TE AMO MAIS QUE FARINHA LACTEA</h1>
+            <img src="assets/imagem1.jpg" alt="Mensagem Romântica" class="blurred">
+            <div class="heart-progress">
+                <div class="heart-button">❤️</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+        </div>
+        <div class="arrow hidden">→</div>
+    </div>
+
+    <div class="slide" id="slide3">
+        <h1 class="typing-text">Sabe quem mais sentiu sua falta?</h1>
+        <div class="arrow">→</div>
+    </div>
+
+    <div class="slide" id="slide4">
+        <div class="scratch-container">
+            <div class="scratch-overlay"></div>
+            <img src="assets/imagem2.jpg" alt="Foto Casal" class="scratch-image">
+            <div class="scratch-message hidden">ELE MESMO, SHIMBINHA!</div>
+        </div>
+        <div class="arrow hidden">→</div>
+        <div class="scratch-instruction">Raspe a imagem com o dedo</div>
+    </div>
+
+    <div class="slide" id="slide5">
+        <h2 class="typing-text">Dentro do quarto uma surpresa lhe aguarda!</h2>
+    </div>
+
+    <button id="musicButton" class="music-button">🔇 Ligar Música</button>
+    <audio id="bgMusic" loop>
+        <source src="https://www.youtube.com/watch?v=lgsyzQD-wBY" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
