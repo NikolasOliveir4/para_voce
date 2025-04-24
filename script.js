@@ -1,20 +1,30 @@
 function typeWriter(element, speed = 100) {
-    const text = element.textContent;
-    element.textContent = '';
+    const lines = element.innerHTML.split('<br>'); // Captura as linhas separadas por <br>
+    element.innerHTML = '';
     element.style.borderRight = '3px solid #d32f2f';
     
+    let currentLine = 0;
     let i = 0;
+    
     function typing() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        } else {
-            element.style.borderRight = 'none';
-            // Mostra seta após terminar de digitar
-            const arrow = element.closest('.slide').querySelector('.arrow');
-            if (arrow) {
-                arrow.classList.add('visible');
+        if (currentLine < lines.length) {
+            if (i < lines[currentLine].length) {
+                element.innerHTML += lines[currentLine].charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            } else {
+                // Quebra de linha
+                if (currentLine < lines.length - 1) {
+                    element.innerHTML += '<br>';
+                    i = 0;
+                    currentLine++;
+                    setTimeout(typing, speed*2); // Pausa maior entre linhas
+                } else {
+                    // Última linha terminada
+                    element.style.borderRight = 'none';
+                    const arrow = element.closest('.slide').querySelector('.arrow');
+                    if (arrow) arrow.classList.add('visible');
+                }
             }
         }
     }
